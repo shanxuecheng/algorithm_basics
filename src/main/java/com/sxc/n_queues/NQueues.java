@@ -1,4 +1,4 @@
-package com.sxc.algorithm_basics;
+package com.sxc.n_queues;
 
 import java.util.ArrayList;
 import java.util.Arrays;
