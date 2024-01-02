@@ -8,15 +8,24 @@ public class NQueues {
 
     public static final int N = 8;
 
-    private static boolean[][] matrix = new boolean[N + 1][N + 1];
-
     private static int[] result = new int[N + 1];
 
     private static List<int[]> allResults = new ArrayList<int[]>();
 
     public static void main(String[] args) {
         trail(1);
-        System.out.print(allResults.size());
+        System.out.println(allResults.size());
+        System.out.println("all results:");
+        for (int[] result : allResults) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < N; i++) {
+                stringBuilder.append(result[i]);
+                if (i < N - 1) {
+                    stringBuilder.append(", ");
+                }
+            }
+            System.out.println(stringBuilder);
+        }
     }
 
     private static boolean isLegal(int i, int j) {
@@ -31,15 +40,13 @@ public class NQueues {
 
     public static void trail(int i) {
         if (i > N) {
-            allResults.add(Arrays.copyOfRange(result, 1, N));
+            allResults.add(Arrays.copyOfRange(result, 1, N + 1));
         } else {
             for (int j = 1; j <= N; j++) {
-                matrix[i][j] = true;
                 if (isLegal(i, j)) {
                     result[i] = j;
                     trail(i + 1);
                 }
-                matrix[i][j] = false;
             }
         }
     }
