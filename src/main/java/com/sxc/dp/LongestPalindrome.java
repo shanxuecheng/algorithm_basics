@@ -2,6 +2,9 @@ package com.sxc.dp;
 
 import java.util.Arrays;
 
+/**
+ * leetcode 5
+ */
 public class LongestPalindrome {
 
     public static void main(String[] args) {

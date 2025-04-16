@@ -2,6 +2,9 @@ package com.sxc.dp;
 
 import java.util.Arrays;
 
+/**
+ * leetcode 322
+ */
 public class CoinChange {
 
     public static void main(String[] args) {
